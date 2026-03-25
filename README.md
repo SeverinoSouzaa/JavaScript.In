@@ -1,2 +1,2 @@
 # JavaScript.In
-Reforçamdo lógica de programação agora com js
+Reforçando lógica de programação agora com JavaScript
