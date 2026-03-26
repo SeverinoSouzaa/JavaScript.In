@@ -1,0 +1,33 @@
+<script>
+
+
+    const bairro = prompt("Bairro de Entrega: ") //recebe e guarda
+
+    let taxaEntrega //varivel que vai mostrar a saida da taxa
+
+    switch (bairro) {  //inicia pegando o que foi informado no campo
+
+        case "Centro": //se a pessoa escrever isso
+
+            taxaEntrega = 5.00 //vai ser esse o resultado
+
+            break //finaliza comparação
+
+        case "Fragata": 
+        case "Três Vendas": //dois juntos pode pois recebem o mesmo valor
+
+            taxaEntrega = 7.00 //vai resultar nisso
+
+            break
+
+        case "Laranjal":
+            taxaEntrega = 10.00
+            break
+
+        default:
+            taxaEntrega = 8.00 //caso seja digitado um valor ou nome não definido resulta nisso
+    }
+
+    alert(`Taxa R$: ${taxaEntrega.toFixed(2)}`)
+
+</script>
