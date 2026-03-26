@@ -9,16 +9,16 @@ frm.addEventListener("submit", (e) => {
 
     e.preventDefault()
 
-//lê e guarda os valores digitados no form
+    //lê e guarda os valores digitados no form
 
     const nome = frm.inNome.value
     const nota1 = Number(frm.inNota1.value)
     const nota2 = Number(frm.inNota2.value)
 
-//calcula a média
+    //calcula a média
     const media = (nota1 + nota2) / 2
 
-//exibi os resultadoa
+    //exibi os resultadoa
     resp1.innerText = `Média das Notas ${media.toFixed(2)}`
 
 
@@ -32,10 +32,10 @@ frm.addEventListener("submit", (e) => {
         resp2.innerText = `Atenção ${nome}. Você está em exame`
         resp2.style.color = "green" //muda a cor para verde
     }
-    
-    
-    
-    
+
+
+
+
     else {
         resp2.innerText = `Ops ${nome}... Você foi reprovado(a)` // se falso, reprova
         resp2.style.color = "red" // muda a cor para vermelho
