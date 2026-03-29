@@ -9,26 +9,38 @@ frm.addEventListener("submit", (e) => {
 
     const valor = Number(frm.inValor.value)
 
-    const regis1 ={valor1: 1.00, tempo1: "30"}
-    const regis2 ={valor2: 1.75, tempo2: "60"}
-    const regis3 ={valor3: 3.00, tempo3: "120"}
-  
-
-    if (valor < regis1.valor) {
-        resp1.innerText = `Valor Insuficiente`
+    if (valor < 1.00) {
+        alert(`Valor Insuficiente (no mínimo, R$ 1.00)`)
+        frm.inValor.focus()
+        return
     }
 
-    else if (valor <= regis2.valor1) {
-        valor * regis1.tempo1
+    let tempo
+    let troco
+
+
+
+    if (valor < 1.75) {
+        tempo = 30
+        troco = valor % 1.00
+    } else if (valor < 3.00) {
+        tempo = 60
+        troco = valor % 1.75
+    } else {
+        tempo = 120
+        troco = valor % 3.00
+
     }
 
-    
 
-   const tempoFinal = valor * mini 
-   const troco = valor % valores
 
-   resp1.innerText `Tempo: ${tempoFinal}`
-   resp1.innerText `Troco R$: ${troco.toFixed(2)}`
+
+
+    resp1.innerText = `Tempo: ${tempo}min`
+
+    if (troco > 0) {
+        resp2.innerText = `Troco R$: ${troco.toFixed(2)}`
+    }
 
 
 
