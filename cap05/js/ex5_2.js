@@ -9,11 +9,11 @@ frm.addEventListener("submit", (e) => {
 
     let resposta = `Entre ${numero} e 1: `
 
-    for (let i = numero; i > 0; i--) {
+    for (let i = numero; i > 1; i--) {
         resposta = resposta + i + ","
-
-
     }
+
+    resposta = resposta + "1."
 
     resp.innerText = resposta
 })
