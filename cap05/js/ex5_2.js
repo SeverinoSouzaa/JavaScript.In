@@ -13,6 +13,8 @@ frm.addEventListener("submit", (e) => {
         resposta = resposta + i + ","
     }
 
+    //let i = numero while (i>0) {resposta = resposta + i + "," i--}
+
     resposta = resposta + "1."
 
     resp.innerText = resposta
