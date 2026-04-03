@@ -8,24 +8,24 @@ frm.addEventListener("submit", (e) => {
     const chinchilas = Number(frm.inNumero.value)
     const anos = Number(frm.inAnos.value)
 
-    let resposta = `1° Ano: ${chinchilas}\n`
-    let triplo = chinchilas * 3
+    let resposta = ""
+    let total = chinchilas
 
-    for (let i = 2; i <= anos; i++) {
-
+    for (let i = 1; i <= anos; i++) {
+    
         if (chinchilas < 2) {
 
             alert = "Número de chincilas deve ser Maior ou igual a 2 (casal)"
 
         } else {
 
+            
+            resposta = resposta + i + "° Ano: " + total + " Chinchilas\n"
 
-
-            resposta = resposta + i + "° Ano: " + triplo + "\n"
+            total = total * 3
 
         }
     }
-
 
     resp.innerText = resposta
 })
