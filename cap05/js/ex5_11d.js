@@ -15,5 +15,5 @@ frm.addEventListener("submit", (e) => {
         exibir += `${nomeFruta} * `
     }
 
-    resp.innerText = `${exibir} ${nomeFruta}`
+    resp.innerText = `${exibir} ${nomeFruta}.`
 })
