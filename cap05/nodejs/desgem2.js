@@ -45,6 +45,7 @@ if (regisAlunos > 0) {
     console.log("Nenhum aluno registrado.")
 }
 
+//comentario para fazer o desafio 3 com gemini hoje ainda!!
 
 
 
