@@ -21,7 +21,7 @@ frm.addEventListener("submit", (e)=> {
     frm.inPaciente.focus()
 })
 
-frm.addEventListener("click", ()=> {
+frm.btUrgencia.addEventListener("click", ()=> {
     if(!frm.checkValidity()){
         alert("Informe o nome do paciente a ser atendido em caráter de urgência")
         frm.inPaciente.focus()
@@ -40,7 +40,7 @@ frm.addEventListener("click", ()=> {
     frm.inPaciente.focus()
 })
 
-frm.addEventListener("click", ()=> {
+frm.btAtender.addEventListener("click", ()=> {
     if (pacientes.length == 0) {
         alert("Não há pacientes na lista de espera")
         frm.inPaciente.focus()
