@@ -33,7 +33,7 @@ frm.btUrgencia.addEventListener("click", ()=> {
 
     let lista = ""
 
-    pacientes.forEach((paciente, i) => (lista += `${i+1}. ${paciente}\n`))
+    pacientes.forEach((paciente, i) => (lista += `${i+1}. ${paciente}\n`)) //paciente = conteudo do "vagão". i = posição do "vagão"
 
     respLista.innerText = lista
     frm.inPaciente.value = ""
