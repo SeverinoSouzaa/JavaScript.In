@@ -16,7 +16,7 @@ frm.addEventListener("submit", (e)=> {
         respDica.innerText =  `Parabéns!! Número sorteado: ${sorteado}`
 
         frm.btSubmit.disable = true
-        frm.btNovo.className = "Exibe"
+        frm.btNovo.className = "exibe"
     } else {
         if (erros.includes(numero)) {
             alert(`Você já apostou no número: ${numero}. Tente outro...`)
@@ -43,4 +43,9 @@ frm.addEventListener("submit", (e)=> {
 
     frm.inNumero.value = ""
     frm.inNumero.focus()
+})
+
+
+frm.btNovo.addEventListener ("click", () => {
+    location.reload()
 })
