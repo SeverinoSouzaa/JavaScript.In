@@ -33,11 +33,8 @@ filaPref.forEach((fila, i) => {
 console.log("\nFila Normal")
 console.log("-".repeat(40))
 
-const filaNormal = clientes.filter(cliente => cliente.idade <60)
-filaNormal.forEach((fila,i) => {
-    console.log(`${i+1}. ${fila.nome}`)
+const filaNormal = clientes.filter(cliente => cliente.idade < 60)
+filaNormal.forEach((fila, i) => {
+    console.log(`${i + 1}. ${fila.nome}`)
 })
-
-
-
 
