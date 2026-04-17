@@ -31,9 +31,9 @@ frm.btListar.addEventListener("click", () => {
 
     let lista = ""
 
-    for (const clube of clubes){
+    for (const clube of clubes) {
 
-        lista += clube + "\n"  
+        lista += clube + "\n"
     }
 
     resp.innerText = lista
@@ -42,5 +42,28 @@ frm.btListar.addEventListener("click", () => {
 
 frm.btTabela.addEventListener("click", () => {
 
-    
+const tamanho = clubes.length
+
+if (tamanho == 0 || (tamanho % 2 == 1)){
+    alert("Deve haver número par de clubes na lista")
+    inClube.focus()
+    return
+
+}
+
+let jogos = ""
+
+const ultimo = tamanho - 1
+
+for (let i = 0; i < tamanho / 2; i++){
+    jogos += clubes[i] + " x " + clubes[ultimo - i] + "\n"
+
+}
+
+resp.innerText = jogos
+
+
+
+
+
 })
