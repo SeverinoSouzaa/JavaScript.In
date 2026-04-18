@@ -1,23 +1,27 @@
+//seleciona elementos form e resposta do html
 const frm = document.querySelector("form")
 const resp1 = document.querySelector("h3")
 const resp2 = document.querySelector("h4")
 
-
+//declara vetor para armazenar os numeros
 const numeros = []
 
+
+//alerta para quando clicar em adicionar
 frm.addEventListener("submit", (e) => {
-    e.preventDefault()
+    e.preventDefault() 
 
-
+    //le o numero digitado
     const numero = Number(frm.inNumero.value)
 
+    //condição que diz se não for um número para inserir um
     if (isNaN(numero)) {
         alert("Informe um número!")
         return
     }
 
 
-
+    //usa o metodo includes para verificar se o número inserido ja tem no vetor
     if (numeros.includes(numero)) {
         alert("Número repetido! informe outro")
         frm.inNumero.value = ""
@@ -25,19 +29,23 @@ frm.addEventListener("submit", (e) => {
         return
     }
 
-
+    //se não fo reptido adiciona no vetor na ultima posição
     numeros.push(numero)
 
+    //declara saida para concatenação
     let lista = ""
 
+    //percorre o vetor para montar a saida
     for (const numerodavez of numeros) {
         lista += numerodavez + ","
     }
 
+
+    //mostra na tela atraves do html
     resp1.innerText = `Números: ${lista}`
 
 
-
+    //limpa o campo e foca o cursor
     frm.inNumero.value = ""
     frm.inNumero.focus()
 
@@ -45,11 +53,13 @@ frm.addEventListener("submit", (e) => {
 
 })
 
-
+//evento ao clicar em ver ordem
 frm.btVerificar.addEventListener("click", () => {
 
+    //cria uma variavel com valor verdadeiro
     let crescente = true
 
+    //laço de repetição que percorre o vetor verifica se o número da vez é maior que o próximo, se sim a variavel agora recebe falso e quebra o sistema
     for (let i = 0; i < numeros.length - 1; i++) {
         if (numeros[i] > numeros[i + 1]) {
             crescente = false
@@ -57,9 +67,11 @@ frm.btVerificar.addEventListener("click", () => {
         }
     }
 
+    //se crescente verdadeiro estão em ordem
     if (crescente) {
         resp2.innerText = "Os números estão em ordem crescente"
 
+    //se crescente falso não estão em ordem
     } else {
         resp2.innerText = "Os números não estão em ordem crescente"
 
