@@ -32,17 +32,9 @@ frm.addEventListener("submit", (e) => {
     //se não fo reptido adiciona no vetor na ultima posição
     numeros.push(numero)
 
-    //declara saida para concatenação
-    let lista = ""
-
-    //percorre o vetor para montar a saida
-    for (const numerodavez of numeros) {
-        lista += numerodavez + ","
-    }
-
-
-    //mostra na tela atraves do html
-    resp1.innerText = `Números: ${lista}`
+    
+    //mostra saida com join para transformar em uma lista de string
+    resp1.innerText = "Números: " + numeros.join(", ")
 
 
     //limpa o campo e foca o cursor
@@ -55,6 +47,11 @@ frm.addEventListener("submit", (e) => {
 
 //evento ao clicar em ver ordem
 frm.btVerificar.addEventListener("click", () => {
+
+    if(numeros.length == 0){
+        alert("Não há números na lista")
+        return
+    }
 
     //cria uma variavel com valor verdadeiro
     let crescente = true
