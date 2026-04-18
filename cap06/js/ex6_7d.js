@@ -23,21 +23,45 @@ frm.btListar.addEventListener("click", () => {
         return
     }
 
-let lista = ""
+    let lista = ""
 
-for(const candidato of candidatosVetor){
-    lista += candidato.nome + " - " + candidato.acertos + " acerto(s)\n"
-}
+    for (const candidato of candidatosVetor) {
+        lista += candidato.nome + " - " + candidato.acertos + " acerto(s)\n"
+    }
 
 
-resp.innerText = lista
+    resp.innerText = lista
 
-frm.inCandidato.value = ""
-frm.inAcertos.value = ""
-frm.inCandidato.focus()
+    frm.inCandidato.value = ""
+    frm.inAcertos.value = ""
+    frm.inCandidato.focus()
 
 })
 
 frm.btAprovados.addEventListener("click", () => {
-    
+
+   
+    if (candidatosVetor.length == 0) {
+        alert("Não há candidatos na lista")
+        return
+    }
+
+    const numAcertos = Number(prompt("Número de Acertos para Aprovação? "))
+
+
+    const aprovados = candidatosVetor.filter(candidato => candidato.acertos >= numAcertos)
+
+    if (aprovados.length == 0) {
+        alert("Não há candidatos aprovados")
+        return
+    }
+
+    aprovados.sort((a, b) => b.acertos - a.acertos)
+
+    let lista = ""
+    for (const aprovado of aprovados) {
+        lista += aprovado.nome + " - " + aprovado.acertos + " acerto(s)\n"
+    }
+
+    resp.innerText = lista
 })
