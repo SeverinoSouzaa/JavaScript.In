@@ -65,8 +65,4 @@ frm.btVerificar.addEventListener("click", () => {
 
     }
 
-
-
-
-
 })
