@@ -1,11 +1,19 @@
 <script>
-    const palavra = prompt("Palavra: ")
-    const tam = palavra.length
+    const palavra = prompt("Palavra: ")//digita palavra ex= bolo
+    const tam = palavra.length //bolo tem 4 letras, tam =4
 
-
+    //quero a ultima letra, então tam-1, pois eu quero o indice, o tamanho é 4 mas a ultima letra está no indice 3, pois começa sempre em 0
     let inverso = palavra.charAt(tam - 1).toUpperCase()
+    //guarde algo aqui = percorra a palavra(pegue o ultimo indica).coloque em maiusculo. inverso = O
 
+
+    //ja temos a ultima letra em maiusculo, então comece o laço pela q vem antes dela (tam-2) e continue indo para trás ate chegar na primeira letra (0)
     for (let i = tam -2; i >= 0; i--) {
+
+        //concatena cada volta ate o laço acabar (0)
+        //volta 1= inicia indice 2 (l), e cola em minusculo = Ol
+        //volta 2= inicia indice 1 (o), e cola em minusculo = Olo
+        //volta 3= inicia indice 0 (b), e cola em minusculo = Olob
         inverso += palavra.charAt(i).toLowerCase()
 
     }
