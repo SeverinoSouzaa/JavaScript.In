@@ -2,8 +2,8 @@ const frm = document.querySelector("form")
 const resp = document.querySelector("h3")
 
 
-const TAXA_MULTA = 2/100
-const TAXA_JUROS = 0.33/100
+const TAXA_MULTA = 2 / 100
+const TAXA_JUROS = 0.33 / 100
 
 frm.addEventListener("submit", (e) =>{
     e.preventDefault()
@@ -25,7 +25,7 @@ frm.addEventListener("submit", (e) =>{
     let juros = 0
     
     if (atraso > 0){
-        const dias = atraso /86400000
+        const dias = atraso / 86400000
         multa = valor * TAXA_MULTA
         juros = valor * TAXA_JUROS * dias
 
@@ -37,5 +37,5 @@ frm.addEventListener("submit", (e) =>{
     frm.outMulta.value = multa.toFixed(2)
     frm.outJuros.value = juros.toFixed(2)
     frm.outTotal.value = total.toFixed(2)
-    
+
 })
