@@ -9,7 +9,7 @@ const classificarVeiculo = (ano) => {
     let classif
     if(ano == anoAtual){
         classif = "Novo"
-    } else if (ano == anoAtual - 1 || anoAtual - 2){
+    } else if (ano == anoAtual - 1 || ano == anoAtual - 2){
         classif = "Seminovo"
     } else {
         classif = "Usado"
@@ -17,8 +17,7 @@ const classificarVeiculo = (ano) => {
     return classif
 }
 
-const calcularEntrada = (valor, status) => 
-    status == "Novo" ? valor * 0.5 : valor * 0.3
+const calcularEntrada = (valor, status) => status == "Novo" ? valor * 0.5 : valor * 0.3
 
 
 frm.addEventListener("submit", (e) => {
