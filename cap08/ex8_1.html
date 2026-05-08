@@ -1,0 +1,18 @@
+<script>
+
+    //função situação que recebe os parâmetros nota e media
+    const situacao = (nota, media) => {
+        if (nota >= media) {
+            alert("Aprovado")
+        } else {
+            alert("Reprovado")
+        }
+    }
+
+    //programa inicia aqui, pela leitura da nota
+    const prova1 = Number(prompt("Qual Nota: "))
+
+    //chamada da função, onde ocorre a chamada de parâmetros, no caso aqui 2, sendo atribuídos para nota e media.
+    situacao(prova1, 7)
+    
+</script>
