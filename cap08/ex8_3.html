@@ -1,0 +1,30 @@
+<script>
+    const calcularMedia = (...notas) => {
+
+        //pega o tamanho do vetor
+        const num = notas.length //notas é um array
+
+        //verifica se o vetor é vazio
+        if (num == 0) {
+            console.log("Informe, no mínimo, uma nota")
+            return
+        }
+
+        //senao declara variavel para somar todas as notas que entrarem aqui
+        let soma = 0
+
+        //percorre cada nota do vetor e guarda em "soma"
+        for (const nota of notas) {
+            soma += nota
+        }
+
+        //divide o valor total dentro de "soma" pelo tamanho do vetor
+        const media = soma / num
+        console.log(`Méddia: ${media.toFixed(1)}`)
+    }
+
+    calcularMedia(6, 7, 8) //media: 7.0
+    calcularMedia(2, 10) //media: 6.0
+    calcularMedia(7.5, 10, 8, 9.5) //media: 8.8
+    calcularMedia() //informe, no mínimo, um nota
+</script>
